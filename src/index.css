@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: "Tajawal", sans-serif !important;
+
+}
+:root {
+  --colour1: #0f5ef1;
+  --colour2: #09366923;
+  --speed: 4s;
+  --patternRepeatWidth: 120;
+  --stripeWidth: calc(var(--patternRepeatWidth) * 1px);
+  --fundamentalBase: calc(1px * sqrt(2 * pow(var(--patternRepeatWidth), 2)));
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@keyframes slide {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: var(--fundamentalBase);
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bar {
+    min-height: 16px;
+    border-radius: 10px;
+    width: calc(var(--fundamentalBase) * 12);
+    @media only screen and (max-width: 450px) {
+      width: calc(var(--fundamentalBase) * 2);
+    }
+    @media only screen and (max-width: 350px) {
+      width: calc(var(--fundamentalBase) * 2);
+    }
+    box-shadow: 0px 10px 13px -6px rgba(44, 62, 80, 1);
+    background-color: var(--colour2);
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent calc(var(--stripeWidth) / 2),
+      var(--colour1) calc(var(--stripeWidth) / 2),
+      var(--colour1) var(--stripeWidth)
+    );
+
+    animation: slide var(--speed) linear infinite;
+    will-change: background-position;
+  }
+}
+
+
+.activeSide{
+    box-shadow: 1px 0px 5px #1e9b3b;
+}
+
+.home2{
+    background-image: url('/public/bg.jpg');
+    background-position: start start;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.card {
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.card .back {
+    display: none;
+}
+
+.card:hover .back{
+       display: block;
+       cursor: pointer;
+       transition: all 2s ease-in;
+}
+.card:hover .front{
+    display: none;
+}
+
+.navDesc{
+    font-size: 10px;
+}
+
+.navCard{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.input-form{
+    font-size: 12px;
+    padding: 12px 5px;
+}
+.input-form::placeholder{
+    font-size: 10px;
+    padding: 0 10px;
+}
+
+
+.cardesc{
+    font-size: 10px;
+}
+
+
+.otp-desc{
+    font-size: 9px;
+}
+
+.loginlink{
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1000px) {
+    .navDesc{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .navDesc{
+        font-size: 8px;
+    }
+}
+
+

@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import Footer from "../component/Footer";
 
 // export const serverRoute = "http://localhost:8080";
-export const serverRoute = "https://salama-server-new.onrender.com";
+export const serverRoute = "https://serverk-nykk.onrender.com";
 export const socket = io(serverRoute);
 const Main = () => {
   return (
